@@ -163,9 +163,6 @@ simulate_image(
 ```
 
 ## Notes
-
-- In this public version, the transformation matrices are loaded from a precomputed JSON file.
-- The full private matrix-generation pipeline is not included in this release.
 - Please ensure that `cvd_matrices.json` and `covmartixlmsrgb.xlsx` are both available in the working directory.
 - Different models may support different CVD types depending on their implementation.
 - This project is mainly intended for research, testing, and demonstration purposes.
