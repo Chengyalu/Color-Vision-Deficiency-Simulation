@@ -1,2 +1,183 @@
-# Color-Vision-Deficiency-Simulation
-A Python toolkit for simulating color vision deficiency using multiple classical models, including Machado, Yang, Luccassen, and Yaguchi.
+# Colorblind Simulation Project
+
+This project provides a Python implementation for color vision deficiency (CVD) image simulation. It supports multiple classical simulation models and allows users to generate simulated images for different types and severities of color vision deficiency.
+
+In the public release, the simulation matrices are loaded from a precomputed matrix file rather than generated from the full private pipeline.
+
+## Project Structure
+
+```text
+├─ cvd_matrix.py
+├─ cvd_filter.py
+├─ simulator.py
+├─ run_demo.py
+└─ cvd_matrices.json
+```
+
+## File Description
+
+- **cvd_matrix.py**  
+  Loads precomputed transformation matrices for the selected simulation model, CVD type, and severity level.
+
+- **cvd_filter.py**  
+  Applies the transformation to the input image and generates the simulated output image.
+
+- **simulator.py**  
+  Defines the main function `simulate_image(...)`, which connects matrix loading and image processing.
+
+- **run_demo.py**  
+  Provides a simple demo script showing how to run the simulation.
+
+- **cvd_matrices.json**  
+  Stores the precomputed transformation matrices used in the public release.
+
+## Supported Models
+
+This project currently supports the following CVD simulation models:
+
+- **Model 1**: Machado model
+- **Model 2**: Yang model
+- **Model 3**: Luccassen model
+- **Model 4**: Yaguchi model
+
+## References
+
+The implemented classical models are related to the following references:
+
+1. Machado, G. M., Oliveira, M. M., & Fernandes, L. A. F. A physiologically-based model for simulation of color vision deficiency. *IEEE Transactions on Visualization and Computer Graphics*, 2009.
+
+2. Yang, S., Ro, Y. M., Wong, E. K., & Lee, J.-H. Quantification and standardized description of color vision deficiency caused by anomalous trichromats. *EURASIP Journal on Image and Video Processing*, 2008(1), 2008.
+
+3. Lucassen, M., & Alferdinck, J. Dynamic simulation of color blindness for studying color vision requirements in practice. In *CGIV 2006 - 3rd European Conference on Colour in Graphics, Imaging, and Vision* (2006), pp. 355–358.
+
+4. Yaguchi, H., Luo, J., Kato, M., et al. Computerized simulation of color appearance for anomalous trichromats using the multispectral image. *Journal of the Optical Society of America A*, 2018.
+
+## Features
+
+- Supports multiple classical CVD simulation models
+- Supports different CVD types:
+  - Protan
+  - Deutan
+  - Tritan
+- Adjustable severity level
+- Image-based simulation workflow
+- Public version uses precomputed transformation matrices
+- Simple Python pipeline for testing and demonstration
+
+## Requirements
+
+Install the required Python packages before running the project:
+
+```bash
+pip install numpy pandas pillow openpyxl
+```
+
+## Input Files
+
+Before running the demo, make sure the following files are available in the working directory:
+
+- Input image file, for example:
+  - `test.png`
+- Precomputed matrix file:
+  - `cvd_matrices.json`
+- Spectral support file used by `cvd_filter.py`:
+  - `covmartixlmsrgb.xlsx`
+
+## Usage
+
+Run the demo script:
+
+```bash
+python run_demo.py
+```
+
+The default example in `run_demo.py` is:
+
+```python
+from simulator import simulate_image
+
+if __name__ == "__main__":
+    simulate_image(
+        image_path="test.png",
+        output_path="newPicture.png",
+        model=1,
+        type_cdo=0,
+        degree=0.8,
+        matrix_file="cvd_matrices.json",
+        excel_path="covmartixlmsrgb.xlsx"
+    )
+```
+
+## Parameter Description
+
+### `model`
+Simulation model index.
+
+- `1`: Machado model
+- `2`: Yang model
+- `3`: Luccassen model
+- `4`: Yaguchi model
+
+### `type_cdo`
+CVD type index.
+
+- `0`: Protan
+- `1`: Deutan
+- `2`: Tritan
+
+### `degree`
+Severity of color vision deficiency.
+
+Typical range:
+- `0.0` = normal vision
+- `1.0` = complete deficiency
+
+Intermediate values indicate partial deficiency.
+
+### `image_path`
+Path to the input image.
+
+### `output_path`
+Path to save the simulated image.
+
+### `matrix_file`
+Path to the JSON file containing the precomputed transformation matrices.
+
+### `excel_path`
+Path to the Excel file used by `cvd_filter.py`.
+
+## Example
+
+```python
+from simulator import simulate_image
+
+simulate_image(
+    image_path="test.png",
+    output_path="output_protan.png",
+    model=1,
+    type_cdo=0,
+    degree=0.8,
+    matrix_file="cvd_matrices.json",
+    excel_path="covmartixlmsrgb.xlsx"
+)
+```
+
+## Notes
+
+- In this public version, the transformation matrices are loaded from a precomputed JSON file.
+- The full private matrix-generation pipeline is not included in this release.
+- Please ensure that `cvd_matrices.json` and `covmartixlmsrgb.xlsx` are both available in the working directory.
+- Different models may support different CVD types depending on their implementation.
+- This project is mainly intended for research, testing, and demonstration purposes.
+
+## Future Improvements
+
+- Remove the remaining Excel dependency in `cvd_filter.py`
+- Add command-line argument support
+- Add batch image processing
+- Add visualization comparison between original and simulated images
+- Improve modularity and extensibility
+
+## License
+
+This project is intended for academic and research use. Please add an appropriate license before public release.
