@@ -167,13 +167,6 @@ simulate_image(
 - Different models may support different CVD types depending on their implementation.
 - This project is mainly intended for research, testing, and demonstration purposes.
 
-## Future Improvements
-
-- Remove the remaining Excel dependency in `cvd_filter.py`
-- Add command-line argument support
-- Add batch image processing
-- Add visualization comparison between original and simulated images
-- Improve modularity and extensibility
 
 ## License
 
