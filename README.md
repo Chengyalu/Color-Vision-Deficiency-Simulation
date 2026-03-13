@@ -2,7 +2,7 @@
 
 This project provides a Python implementation for color vision deficiency (CVD) image simulation. It supports multiple classical simulation models and allows users to generate simulated images for different types and severities of color vision deficiency.
 
-In the public release, the simulation matrices are loaded from a precomputed matrix file rather than generated from the full private pipeline.
+
 
 ## Project Structure
 
