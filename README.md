@@ -165,7 +165,7 @@ simulate_image(
 
 To facilitate intuitive comparison across different color vision deficiency simulation methods, we provide side-by-side visual examples under the same deficiency type and severity level.
 
-### Example: Protan, Severity = 0.8
+### Example: Deutan, Severity = 1.0
 
 <table>
   <tr>
@@ -176,11 +176,11 @@ To facilitate intuitive comparison across different color vision deficiency simu
     <th>Lucassen</th>
   </tr>
   <tr>
-    <td><img src="test.png" alt="Original" width="220"></td>
-    <td><img src="Machado.png" alt="Machado" width="220"></td>
-    <td><img src="Yang.png" alt="Yang" width="220"></td>
-    <td><img src="Yaguchi.png" alt="Yaguchi" width="220"></td>
-    <td><img src="Lucassen.png" alt="Lucassen" width="220"></td>
+    <td><img src="test2.png" alt="Original" width="220"></td>
+    <td><img src="Machado-deu.png" alt="Machado" width="220"></td>
+    <td><img src="Yang-deu.png" alt="Yang" width="220"></td>
+    <td><img src="Yaguchi-deu.png" alt="Yaguchi" width="220"></td>
+    <td><img src="Lucassen-deu.png" alt="Lucassen" width="220"></td>
   </tr>
 </table>
 
