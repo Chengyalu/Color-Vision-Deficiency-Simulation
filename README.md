@@ -169,7 +169,7 @@ To facilitate intuitive comparison across different color vision deficiency simu
 
 | Original | Machado | Yang | Yaguchi | Lucassen |
 |----------|---------|------|---------|------|
-| ![](test.png) | ![](machado.png) | ![](Yang.png) | ![](Yaguchi.png) | ![](Lucassen.png) |
+| ![](test.png) | ![](Machado.png) | ![](Yang.png) | ![](Yaguchi.png) | ![](Lucassen.png) |
 
 
 
