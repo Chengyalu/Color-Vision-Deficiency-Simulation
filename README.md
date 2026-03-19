@@ -176,7 +176,7 @@ To facilitate intuitive comparison across different color vision deficiency simu
     <th>Lucassen</th>
   </tr>
   <tr>
-    <td><img src="test2.png" alt="Original" width="220"></td>
+    <td><img src="test2.jpg" alt="Original" width="220"></td>
     <td><img src="Machado-deu.png" alt="Machado" width="220"></td>
     <td><img src="Yang-deu.png" alt="Yang" width="220"></td>
     <td><img src="Yaguchi-deu.png" alt="Yaguchi" width="220"></td>
